@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# v1 2018-01-29
+# This is another comment
+pages/bayesian-network-forecasting.nb.html
+pages/forecasting-sales-grupo-bebidas.nb.html
+pages/forecasting-sales-grupo-sanduiche.nb.html
+pages/forecasting-sales-grupo-acompanhamento.nb.html
+
+index.html
+
+styles/entities.css
+styles/loader.css
+styles/sidebar.css
+
+app.js
+lib/bootstrap/css/bootstrap.min.css
+
+lib/angular/angular.min.js
+lib/bootstrap/js/bootstrap.min.js
+controllers/editorController.js

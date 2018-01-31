@@ -1,0 +1,108 @@
+---
+output: html_notebook
+
+---
+<br>
+<hr>
+
+<div style="text-align: justify;">
+<br>
+<center><div><b style="font-size:21px;">Mestrado profissional em Matemática, Estatística e Computação Aplicadas à Indústria</b></div></center>
+<center><div><b style="font-size:22px;color:#72849d">Redes Bayesianas Gaussianas aplicada à predição de vendas em uma grande rede de fast-food brasileira</b></div></center>
+<br>
+<div style="text-align: justify;">
+Resultados apresentados ao Instituto de Ciências Matemáticas e de Computação - ICMC-USP, como parte dos requisitos para obtenção do título de mestre - Mestrado profissional em Matemática, Estatística e Computação Aplicadas à Indústria, sob orientação do <a href="http://conteudo.icmc.usp.br/pessoas/alneu/" target="_blank"> Prof. Dr. Alneu de Andrade Lopes</a> e Co-Orientação <a href="https://scholar.google.com/citations?user=tuOaq-4AAAAJ&hl=pt-BR" target="_blank">Dr. Brett Drury.</a>
+</div>
+<br>
+<hr>
+<center><div><b style="font-size:22px;">Previsão de Grupo de Bebidas</b></div></center>
+<hr>
+```{r include=FALSE}
+library('forecast')
+library('plotly')
+library('MLmetrics')
+```
+
+```{r include=FALSE}
+
+df = read.table('data/data-sales.csv', header=TRUE, sep=";")
+
+df_train = df[1:84,]
+df_test = df[85:90,] 
+
+serieTemporal <- ts(df_train['grupoBebida'], start=c(2010, 1), end=c(2016, 12), frequency=12)
+```
+
+<hr>
+<center><div><b style="font-size:22px;">Amostra de Dados de Vendas</b></div></center>
+<hr>
+```{r echo=FALSE}
+head(df_train)
+```
+
+<hr>
+<center><div><b style="font-size:22px;">Análise de Estacionaridade</b></div></center>
+<hr>
+<span>Na análise de estacionaridade do grupo de bebidas. Para p-value < <b>0.05</b> indica que a série possui comportamento estacionário.</span>
+
+```{r echo=FALSE}
+adf.test(serieTemporal)
+```
+
+<hr>
+<center><div><b style="font-size:22px;">Ajuste do Modelo</b></div></center>
+<hr>
+
+```{r echo=FALSE}
+fitArima <- HoltWinters(serieTemporal)
+fitArima
+```
+
+<hr>
+<center><div><b style="font-size:22px;">Previsão de Grupo de Bebidas - 1 Semestre de 2017</b></div></center>
+<hr>
+
+```{r echo=FALSE}
+ts_forecast <- forecast(fitArima, 6)
+ts_forecast$mean
+```
+<hr>
+<center><div><b style="font-size:22px;">MAPE - Erro Percentual Absoluto Médio</b></div></center>
+<hr>
+<br>
+```{r echo=FALSE}
+mape <- MAPE(ts_forecast$mean, df_test$grupoBebida)
+mape * 100
+```
+
+<hr>
+<center><div><b style="font-size:22px;">Visualização da Previsão de Grupo de Bebidas - 1 Semestre de 2017</b></div></center>
+<hr>
+<br>
+```{r fig.width=10, fig.height=5, echo=FALSE}
+
+p <- plot_ly() %>%
+  add_lines(x = time(serieTemporal), y = serieTemporal,
+            color = I("purple"), name = "Observado",  fill = "tonexty") %>%
+  add_ribbons(x = time(ts_forecast$mean), ymin = ts_forecast$lower[, 2], ymax = ts_forecast$upper[, 2],
+              color = I("gray95"), name = "95% confiança") %>%
+  add_ribbons(x = time(ts_forecast$mean), ymin = ts_forecast$lower[, 1], ymax = ts_forecast$upper[, 1],
+              color = I("gray80"), name = "80% confiança") %>%
+  add_lines(x = time(ts_forecast$mean), y = ts_forecast$mean, color = I("blue"), name = "Previsto")
+
+ggplotly(p)
+
+```
+
+<hr>
+<center><div><b style="font-size:22px;">Validação - Observado vs Previsto</b></div></center>
+<hr>
+<br>
+```{r fig.width=10, fig.height=5, echo=FALSE}
+p1 <- plot_ly() %>%
+  add_lines(x = c(1:6), y = df_test$grupoBebida,
+            color = I("purple"), name = "Observado") %>%
+  add_lines(x = c(1:6), y = ts_forecast$mean, color = I("blue"), name = "Previsto")
+
+ggplotly(p1)
+```

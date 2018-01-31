@@ -1,0 +1,331 @@
+.entities {
+  line-height: 2;
+}
+
+cnj{
+  padding: 0.25em 0.35em;
+  margin: 0px 0.25em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 0.25em;
+  border: 1px solid;
+  background: rgba(166, 226, 45, 0.2);
+  border-color: rgb(166, 226, 45);
+}
+
+cnj::after {
+  box-sizing: border-box;
+  content: "CNJ";
+  font-size: 0.6em;
+  line-height: 1;
+  padding: 0.35em;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 0.1rem 0.5rem;
+  background: rgb(166, 226, 45);
+}
+
+
+datachancela{
+  padding: 0.25em 0.35em;
+  margin: 0px 0.25em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 0.25em;
+  border: 1px solid;
+  background: rgba(29, 93, 226, 0.2);
+  border-color: rgb(29, 93, 226)
+}
+
+datachancela::after {
+  box-sizing: border-box;
+  content: "Data chancela";
+  font-size: 0.6em;
+  line-height: 1;
+  padding: 0.35em;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 0.1rem 0.5rem;
+  background: rgb(97, 148, 226);
+}
+
+
+uf{
+  padding: 0.25em 0.35em;
+  margin: 0px 0.25em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 0.25em;
+  border: 1px solid;
+  background: rgba(226, 23, 31, 0.2);
+  border-color: rgb(226, 23, 31);
+}
+
+uf::after {
+  box-sizing: border-box;
+  content: "UF";
+  font-size: 0.6em;
+  line-height: 1;
+  padding: 0.35em;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 0.1rem 0.5rem;
+  background: rgb(249, 92, 105);
+}
+
+cidade{
+  padding: 0.25em 0.35em;
+  margin: 0px 0.25em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 0.25em;
+  border: 1px solid;
+  background: rgba(145, 145, 145, 0.2);
+  border-color: rgba(145, 145, 145, 0.69);
+}
+
+cidade::after {
+  box-sizing: border-box;
+  content: "Cidade";
+  font-size: 0.6em;
+  line-height: 1;
+  padding: 0.35em;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 0.1rem 0.5rem;
+  background: rgba(145, 145, 145, 0.69);
+}
+
+envolvido{
+  padding: 0.25em 0.35em;
+  margin: 0px 0.25em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 0.25em;
+  border: 1px solid;
+  background: rgba(201, 0, 226, 0.2);
+  border-color: rgb(201, 0, 226);
+}
+
+envolvido::after {
+  box-sizing: border-box;
+  content: "Envolvido";
+  font-size: 0.6em;
+  line-height: 1;
+  padding: 0.35em;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 0.1rem 0.5rem;
+  background: rgb(214, 126, 255);
+}
+
+prazo{
+  padding: 0.25em 0.35em;
+  margin: 0px 0.25em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 0.25em;
+  border: 1px solid;
+  background: rgba(26, 180, 74, 0.2);
+  border-color: rgb(26, 180, 74);
+}
+
+prazo::after {
+  box-sizing: border-box;
+  content: "Prazo";
+  font-size: 0.6em;
+  line-height: 1;
+  padding: 0.35em;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 0.1rem 0.5rem;
+  background: rgb(26, 180, 74);
+}
+
+
+dataaudiencia{
+  padding: 0.25em 0.35em;
+  margin: 0px 0.25em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 0.25em;
+  border: 1px solid;
+  background: rgba(226, 163, 1, 0.2);
+  border-color: rgb(226, 163, 1);
+}
+
+dataaudiencia::after {
+  box-sizing: border-box;
+  content: "Data audiência";
+  font-size: 0.6em;
+  line-height: 1;
+  padding: 0.35em;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 0.1rem 0.5rem;
+  background: rgb(226, 163, 1);
+}
+
+
+horaaudiencia{
+  padding: 0.25em 0.35em;
+  margin: 0px 0.25em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 0.25em;
+  border: 1px solid;
+  background: rgba(147, 226, 67, 0.2);
+  border-color: rgb(147, 226, 67);
+}
+
+horaaudiencia::after {
+  box-sizing: border-box;
+  content: "Hora audiência";
+  font-size: 0.6em;
+  line-height: 1;
+  padding: 0.35em;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 0.1rem 0.5rem;
+  background: rgb(147, 226, 67);
+}
+
+valor{
+  padding: 0.25em 0.35em;
+  margin: 0px 0.25em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 0.25em;
+  border: 1px solid;
+  background: rgba(93, 166, 226, 0.2);
+  border-color: rgb(93, 166, 226);
+}
+
+valor::after {
+  box-sizing: border-box;
+  content: "Valor";
+  font-size: 0.6em;
+  line-height: 1;
+  padding: 0.35em;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 0.1rem 0.5rem;
+  border-color: rgb(93, 166, 226);
+}
+
+tipodedocumento{
+  padding: 0.25em 0.35em;
+  margin: 0px 0.25em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 0.25em;
+  border: 1px solid;
+  background: rgba(110, 48, 226, 0.2);
+  border-color: rgb(110, 48, 226);
+}
+
+tipodedocumento::after {
+  box-sizing: border-box;
+  content: "Tipo de Documento";
+  font-size: 0.6em;
+  line-height: 1;
+  padding: 0.35em;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 0.1rem 0.5rem;
+  border-color: rgb(110, 48, 226);
+}
+
+cpf{
+  padding: 0.25em 0.35em;
+  margin: 0px 0.25em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 0.25em;
+  border: 1px solid;
+  background: rgba(226, 115, 77, 0.2);
+  border-color: rgb(226, 115, 77);
+}
+
+cpf::after {
+  box-sizing: border-box;
+  content: "CPF";
+  font-size: 0.6em;
+  line-height: 1;
+  padding: 0.35em;
+  border-radius: 0.35em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 0.1rem 0.5rem;
+  border-color: rgb(226, 115, 77);
+}
+
+
+body {
+  font: 18px Helvetica, Arial, sans-serif;
+}
+
+.show {
+    z-index:1000;
+    position: absolute;
+    background-color:#C0C0C0;
+    border: 1px solid blue;
+    padding: 2px;
+    display: block;
+    margin: 0;
+    list-style-type: none;
+    list-style: none;
+}
+
+.hide {
+    display: none;
+}
+
+.show li{ list-style: none; }
+.show a { border: 0 !important; text-decoration: none; }
+.show a:hover { text-decoration: underline !important; }
+
+.name-text{
+      text-align: center;
+    color: white;
+    font-size: 22px;
+    font-family: monospace;
+}
+
+.nav-color{
+      background-color: #292b2c;
+}
+
+.editor-context-menu{
+text-align: justify; padding: 20px;
+
+}
+
+.custom-buttom{
+  color: #fff;
+    background-color: #d92027 !important;
+    /* border-color: #0275d8; */
+    width: 155px !important;
+    border: none !important;
+}

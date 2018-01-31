@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AppPrincipal" manifest="mestrado.appcache">
+<head>
+    <meta charset="UTF-8">
+    <title>Bem vindo</title>
+    <link rel="stylesheet" href="styles/entities.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/loader.css">
+</head>
+<body ng-controller="EditorController">
+
+<div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+
+            <ul class="sidebar-nav">
+                <center><img src="resources/icmc.png" width="150" style="margin-top: 20px;"></center>
+                <li class="sidebar-brand">
+                    <a style="color: white">
+                        Projeto de Mestrado
+                    </a>
+                </li>
+                <li>
+                    <a href="#" ng-click="onChangePage('bayesian-network-forecasting')">Home</a>
+                </li>
+                <li>
+                    <a href="#" ng-click="onChangePage('forecasting-sales-grupo-acompanhamento')">Grupo de Acompanhamento</a>
+                </li>
+                <li>
+                    <a href="#" ng-click="onChangePage('forecasting-sales-grupo-bebidas')">Grupo de Bebidas</a>
+                </li>
+                <li>
+                    <a href="#" ng-click="onChangePage('forecasting-sales-grupo-sanduiche')">Grupo de Sanduiches</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" style="
+                position: absolute;
+                bottom: 0;
+                top: 0;
+            ">
+
+                <div class="container-fluid card" style="height: 100%;">
+                    <iframe onload="onLoadFrame()" ng-src="{{linkPage}}" style="height: 100%;border: 0;margin-right: 234px;"></iframe>
+
+                </div>
+            </div>
+        <!-- /#page-content-wrapper -->
+
+</div>
+    <!-- /#wrapper -->
+
+
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="app.js"></script>
+<script src="controllers/editorController.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+<div id="loader" class="showbox">
+  <div class="loader">
+    <svg class="circular" viewBox="25 25 50 50">
+      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+  </div>
+</div>
+
+</body>
+</html>

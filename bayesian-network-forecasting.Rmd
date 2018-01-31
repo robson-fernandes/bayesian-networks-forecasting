@@ -1,0 +1,51 @@
+---
+output: html_notebook
+---
+<br>
+<hr>
+<div style="text-align: justify;">
+<br>
+<center><div><b style="font-size:21px;">Mestrado profissional em Matemática, Estatística e Computação Aplicadas à Indústria</b></div></center>
+<center><div><b style="font-size:22px;color:#72849d">Redes Bayesianas Gaussianas aplicada à predição de vendas em uma grande rede de fast-food brasileira</b></div></center>
+<br>
+<div style="text-align: justify;">
+Resultados apresentados ao Instituto de Ciências Matemáticas e de Computação - ICMC-USP, como parte dos requisitos para obtenção do título de mestre - Mestrado profissional em Matemática, Estatística e Computação Aplicadas à Indústria, sob orientação do <a href="http://conteudo.icmc.usp.br/pessoas/alneu/" target="_blank"> Prof. Dr. Alneu de Andrade Lopes</a> e Co-Orientação <a href="https://scholar.google.com/citations?user=tuOaq-4AAAAJ&hl=pt-BR" target="_blank">Dr. Brett Drury.</a>
+</div>
+<br>
+<hr>
+<center><div><b style="font-size:22px;">Rede Bayesiana Gaussiana - Vendas Fast-Food</b></div></center>
+<hr>
+```{r fig.width=10, fig.height=9, echo=FALSE}
+
+library(DiagrammeR)
+
+grViz("
+digraph neato {
+
+graph [layout = neato]
+
+# Initialization of node attributes
+node [shape = circle,
+      fontname = Helvetica,
+      fontsize = 5,
+      type = circle,
+      fixedsize = true]
+
+node [fillcolor = purple, color = purple]
+venda
+
+node [fillcolor = green, color = green]
+bebida sanduiche milkShake acompanhamento adicional
+
+node [fillcolor = orange, color = orange]
+
+edge [color = grey]
+venda -> {bebida sanduiche milkShake acompanhamento adicional}
+bebida -> {tendencia_b sazonal_b random_b}
+sanduiche -> {tendencia_s sazonal_s random_s}
+milkShake -> {tendencia_m sazonal_m random_m}
+acompanhamento -> {tendencia_ac sazonal_ac random_ac}
+adicional -> {tendencia_aa sazonal_aa random_aa}
+}")
+
+```
